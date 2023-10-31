@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+        background-color: #85FFBD;
+background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+
+    </style>
+</head>
+<body>
+<h1>Change Password</h1>
+<form method="post">{% csrf_token %}
+    <label>Enter New Password:</label>
+    <input type="password" name="password"><br><br>
+    <label>confirm Password:</label>
+    <input type="password" name="cpsw"><br><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>

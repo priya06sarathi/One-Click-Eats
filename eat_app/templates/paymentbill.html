@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function myfunction(){
+        var body=document.getElementById('body').innerHTML;
+        var data=document.getElementById('data').innerHTML;
+        document.getElementById('body').innerHTML=data;
+        window.print()
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     body {
+            background-color: #85FFBD;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+            /* background-repeat: no-repeat; */
+            background-size: 100% 800px;
+        }
+        #tb1{
+            border-collapse:collapse;
+
+            width:100%;}
+        #tb1,td,th{
+            border:2px solid green;
+        }
+        th{
+            height:50px;
+             background-color:skyblue;
+        }
+        td{
+            height:30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align:center;
+            /* background-color:aqua; */
+        }
+        #head {
+            background-color: chartreuse;
+        }
+     #a{
+        border-collapse:collapse;
+        border:2px solid green;
+        margin-top:50px;
+        margin-left:450px;
+        width:40%;
+        }
+<!--        #b{-->
+<!--        margin-top:10px;-->
+<!--        margin-left:50px;-->
+<!--        }-->
+<!--        th{-->
+<!--        background-color:pink;-->
+<!--        }-->
+<!--        td{-->
+<!--        background-color:pink;-->
+<!--        }-->
+     </style>
+</head>
+<body>
+<body id="body">
+<div id="data">
+<h1 align="center">Generating Bill</h1>
+<table id="b">
+    <tr>
+        <th>Name:</th>
+        <th>order id:</th>
+
+    </tr>
+    {% for i in b %}
+     <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.phone}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div id="c">
+ <table id="a">
+    <tr>
+<!--        <th>sl.no</th>-->
+        <th>Dishname</th>
+        <th>Quantity</th>
+        <th>price</th>
+        <th>Total</th>
+    </tr>
+
+    {% for i in a %}
+    {% if i.uid == id %}
+
+     <tr>
+<!--        <td>{{i.id}}</td>-->
+        <td>{{i.dishname}}</td>
+        <td>{{1}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.price}}</td>
+     </tr>
+    {% endif %}
+    {% endfor %}
+
+ </table>
+    <h4 align="center">Thanks For Your Order Visit Again</h4>
+    <a href="http://127.0.0.1:8000/eat_app/userdisplay" type="submit" value="submit">Back</a>
+</div>
+    <button onclick="myfunction()">print page</button>
+</body>
+</html>

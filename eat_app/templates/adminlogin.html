@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+        background-image:url({% static 'registration.jpg' %});
+<!--    background-repeat:no-repeat;background-size:100% 750px;background-attachment:fixed;background-position:center;-->
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left:700px;
+        margin-top:150px;
+        }
+
+<!--        background-repeat:no-repeat;-->
+<!--        background-cover:cover;-->
+<!--        background-position:center;-->
+<!--        }-->
+<!--        .container{-->
+<!--        width:400px;-->
+<!--        margin:0 auto;-->
+<!--        margin-top:100px;-->
+<!--        padding:20px;-->
+<!--        background-color: #FA8BFF;-->
+<!--        border:none;-->
+<!--        cursor:pointer;-->
+<!--        }-->
+<!--        .container input[type="text"],-->
+<!--        .container input[type="password"] {-->
+<!--         width:100px;-->
+<!--         padding:10px;-->
+<!--         margin-bottom:10px;-->
+<!--         }-->
+
+<!--        .container input[type="submit"] {-->
+<!--        width:100px;-->
+<!--        padding:10px;-->
+<!--        background-color: #FA8BFF;-->
+<!--        border:none;-->
+<!--        cursor:pointer;-->
+<!--        }-->
+<!--        .container input[type="submit"]:hover {-->
+<!--        background-color: #08AEEA;-->
+<!--        }-->
+<!--&lt;!&ndash;background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);&ndash;&gt;-->
+
+<!--&lt;!&ndash;background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);&ndash;&gt;-->
+
+<!--&lt;!&ndash;background-color: #08AEEA;&ndash;&gt;-->
+<!--&lt;!&ndash;background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);&ndash;&gt;-->
+
+
+
+
+    </style>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <h1>ADMIN LOGIN</h1><br><br>
+    <table align="center">
+        <label><b>Username:</b></label>
+        <input type="text" name="username"><br><br>
+        <label><b>Password:</b></label>
+        <input type="password" name="password"><br><br>
+        <input type="submit" value="Login" class="btn btn-success">
+    </table>
+    <a href="http://127.0.0.1:8000/eat_app/onlineservice">Back</a>
+</form>
+
+</body>
+</html>

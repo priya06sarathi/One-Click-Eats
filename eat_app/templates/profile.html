@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/661dae47f4.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+    background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+  </style>
+
+</head>
+
+<body>
+<br><h2 align="center">SELECT YOUR CHOICE</h2>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <img width="80px" style="margin-left:200px;" src="{% static 'images/onelogo.png' %}" alt="" />
+    <a class="navbar-brand" href="#" style="margin-left:300px;">All</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/eat_app/bfdisplay">Breakfast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/eat_app/ricedisplay">Rice & Briyani</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/eat_app/sdisplay">Gravy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/eat_app/icedisplay">Drink & Icecream</a>
+        </li>
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">-->
+<!--            Rice Variety-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--            <li><a class="dropdown-item" href="#">Thali</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Ghee Rice</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">White Rice</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Curd Rice</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Tomato Rice</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Jeera Rice</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">-->
+<!--            Briyani-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--            <li><a class="dropdown-item" href="#">Mutton Briyani</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Chicken Briyani</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Prawn Briyani</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Kuskha</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Veg Briyani</a></li>-->
+<!--            <li><a class="dropdown-item" href="#"></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">-->
+<!--            Ice-cream-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--            <li><a class="dropdown-item" href="#">fruits icecream</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Strawberry</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Vanila</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Butterscotch</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">mixed</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Choclate</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+      </ul>
+    </div>
+  </div>
+  <a href="http://127.0.0.1:8000/eat_app/uploadchoice" style="margin-right:30px;"><i class="fa-solid fa-upload"></i></a>
+  <a href="http://127.0.0.1:8000/eat_app/orderhistory" style="margin-right:30px;"><i class="fa-solid fa-cart-shopping"></i></a><br>
+  <a href="http://127.0.0.1:8000/eat_app/adminlogin"style="margin-right:10px;"><i class="fa-solid fa-power-off"></i></a><br>
+</nav>
+ <h1 align="center">Our Special Dishes</h1>
+  <div class="row">
+         {%  for i,j,k,l,m in a %}
+         <div class="col-lg-2 col-md-4 col-sm-12">
+             <div class="card" style="width:200px;">
+                <img src="{% static l %}" width="190px" height="190px" class="card-img-top" alt="...">
+                 <div class="card-body">
+                   <h5 class="card-title">{{i}}</h5>
+                   <p class="card-text"><i class="fa-solid fa-indian-rupee-sign"></i>{{j}}</p>
+                   <p>{{k}}</p>
+                     <a href="http://127.0.0.1:8000/eat_app/deletedishes/{{m}}" class="btn btn-danger">Delete</a>
+                     <a href="http://127.0.0.1:8000/eat_app/editadmindishes/{{m}}" class="btn btn-warning">Edit</a>
+                 </div>
+             </div>
+         </div>
+         {% endfor %}
+  </div>
+</body>
+</html>

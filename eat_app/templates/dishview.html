@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+    background-image:url({% static 'edit dish.jpeg' %});
+    background-size:100% ;
+    }
+    th{
+            height:50px;
+             background-color:green;
+        }
+        td{
+            height:30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align:center;
+            /* background-color:aqua; */
+        }
+
+      #a{
+
+        margin-left:600px;
+        margin-bottom:350px;
+        width:500px;
+        height:300px;}
+
+    </style>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <h1 align="center">VIEW DETAILS</h1>
+<!--    <div id="a" style="margin-left:400px;">-->
+
+
+    <table id="a">
+        <tr>
+            <th><label>Dishname</label></th>
+            <td><input type="text" name="dishname" readonly value="{{a.dishname}}"></td>
+        </tr><br>
+        <tr>
+            <th><label>Price</label></th>
+            <td><input type="text" name="price" readonly value="{{a.price}}"></td>
+        </tr><br>
+        <tr>
+            <th><label>Description</label></th>
+            <td><input type="text" name="description" readonly value="{{a.description}}"></td>
+        </tr><br>
+        <tr>
+            <th><label>Image</label></th>
+            <td><img src="{% static img %}"></td>
+        </tr><br>
+
+        <tr>
+            <td><a href="http://127.0.0.1:8000/eat_app/userdisplay" type="submit" value="submit" class="btn btn-success">Back</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

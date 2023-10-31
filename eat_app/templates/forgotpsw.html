@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        background-color: #85FFBD;
+background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+    </style>
+</head>
+<body align="center">
+<h1>Forget password</h1>
+<form method="post">{% csrf_token %}
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+    <label>Phone:</label>
+    <input type="number" name="phone"><br><br>
+    <input type="submit">
+</form>
+</body>
+</html>
